@@ -6,7 +6,7 @@ Manuscript: "Ultra-Heavy Dark Matter Production in Active Galactic Nucleus Jets:
 
 Author: Kirti Patidar
 Status: ArXiv Preprint (Not yet submitted for peer review)
-Date: November 3, 2025
+Date: Template only — to be filled in after referee comments are received
 
 ---
 
@@ -73,4 +73,4 @@ We believe these revisions have significantly strengthened the manuscript
 and hope the referee will now recommend publication.
 
 Sincerely,
-[Corresponding Author]
+Kirti Patidar

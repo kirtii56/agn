@@ -1,153 +1,132 @@
 ═══════════════════════════════════════════════════════════════
 MANUSCRIPT SUBMISSION CHECKLIST
 Ultra-Heavy Dark Matter Production in AGN Jets
-Version 2.0-FINAL | November 3, 2025
+Version 2.0-FINAL | Last updated 2026-10-19
 ═══════════════════════════════════════════════════════════════
 
 SCIENTIFIC CONTENT
 ══════════════════
-☑ All equations dimensionally correct (verified against Rybicki-Lightman 1979, Jackson 1999)
-☑ Unit error corrected: 0.1M_Pl = 1.22×10^27 eV (NOT 1.22×10^18 eV)
-☑ Figure 1 regenerated with corrected EFT cutoff line
-☑ Klein-Nishina suppression included in IC cooling (Eq. 20)
-☑ Curvature radiation included for ultra-high energies (Eq. 22)
-☐ Deferred — PDF uncertainties using a validated CT18 NNLO PDF set (Track B; current implementation uses an exploratory parametric PDF stand-in, not CT18 NNLO)
-☑ Spatial integration implemented (Eq. 29' replacing Eq. 29)
-☑ UHDM escape/thermalization analysis added (Sec. 5.3)
-☑ LISA/GW signatures discussed (Sec. 5.4.2)
-☑ Direct detection threshold quantified (Eq. 54-56)
+☑ EFT cross section locked: sigma_hat = s_hat*beta^3/(48*pi*Lambda^4), beta = sqrt(1 - 4*m_X^2/s_hat)
+☑ Hillas confinement coefficient corrected: gamma_p,max ~ 3.2e13 (B/100 G)(R/1e18 cm); only the Hillas
+  limit is used, proton curvature-radiation losses are explicitly NOT modeled
+☑ Figure 1 regenerated with the correct EFT-validity boundary (sqrt(s_hat) < Lambda)
+☐ Removed — the cosmological abundance claim (Omega_X^AGN ~ 1e-10 Omega_DM) was found dimensionally
+  incomplete and unfixable from repository evidence; no quantitative abundance bound is reported
+☐ Removed — the jet-scattering/thermalization cross section claim (sigma_X ~ 1e-37 cm^2) was found to
+  exceed what the locked EFT and a derived Xq->Xq cross section can support anywhere in the EFT-valid
+  parameter space; no quantitative thermalization result is used in the reported conclusions
+☐ Deferred — PDF uncertainties using a validated CT18 NNLO PDF set (Track B; current implementation uses
+  an exploratory parametric PDF stand-in, not CT18 NNLO; see Appendix A)
+☑ IceCube observable corrected to match what the code actually computes (an energy-intensity comparison,
+  GeV cm^-2 s^-1 sr^-1), not the earlier, dimensionally mismatched flux statement
+☑ Figure numbering fixed (Fig. 1 = EFT validity, Fig. 2 = Hillas confinement — LaTeX numbers figures by
+  source order, not filename; source order was swapped to match)
 
 REFERENCES & CITATIONS
 ══════════════════════
-☑ 80+ citations included
-☑ All arXiv placeholders resolved (IceCube 2024 → arXiv:2410.18184)
-☑ Citation format standardized (AASTeX style via apsrev4-2.bst)
+☑ IceCube citation DOI corrected (10.3847/1538-4357/acdfcb)
+☑ Citation format via apsrev4-2.bst
 ☑ DOIs included where available
-☑ No "et al." in bibliography (full author lists)
-☑ Canonical papers cited: Blandford-Znajek 1977, Tchekhovskoy 2011, Grzadkowski 2010
+☐ Not independently re-verified this pass — overall citation count and completeness of every entry
 
 FIGURES & TABLES
 ═════════════════
-☑ Figure 1: EFT validity plot (y-axis 10^16 to 10^28 eV, cutoff at 1.22×10^27 eV)
-☑ Figure 2: Max Lorentz factors (electrons + protons, with observational points)
-☑ Figure 3: Production rates vs mass (with 68% CI bands)
-☑ Figure 4: Multi-messenger constraints (Fermi/IceCube/Auger limits)
-☑ Figure S1: MCMC diagnostics (Supplementary Material)
+☑ Figure 1: EFT validity (Lambda vs m_X)
+☑ Figure 2: Maximum Lorentz factors (electrons + protons, Hillas limit)
+☑ Figure 3: Production rates vs mass
+☑ Figure 4: Multi-messenger constraints (Fermi-LAT, IceCube, Pierre Auger)
+☐ N/A — Figure S1 (legacy MCMC diagnostics; not referenced anywhere in the manuscript body; present in the
+  repository's figures/ folder for historical reference only, not part of the arXiv submission package)
 ☐ N/A — Table 1 (obsolete production-rate table removed; not part of the reported result)
 ☐ N/A — Table 2 (never existed in the manuscript)
-☑ All figures 300 DPI, color-blind friendly palettes
-☑ All captions self-contained (>2 sentences each)
+☑ All figures vector PDF
 
-MONTE CARLO / STATISTICS
-═════════════════════════
-☑ Random seed documented (default: 42, configurable via --seed flag)
-☐ N/A — MCMC convergence diagnostics (R̂, N_eff, τ) (not applicable to the reported deterministic (log10 Λ, log10 m_X) inference; no MCMC run was used for the reported result)
-☑ Posterior predictive check included (Figure S1d)
-☐ N/A — 68% confidence intervals (Table 2 does not exist)
-☐ N/A — Prior sensitivity (Jeffreys vs uniform) for C_i (C_i is not a parameter of the implemented/reported model)
-☐ N/A — N = 5×10^6 sample claim (deferred; the reported result is the deterministic (log10 Λ, log10 m_X) grid characterization, not an MCMC run at this scale)
+INFERENCE METHOD
+═════════════════
+☑ Reported result is a deterministic grid evaluation (221 points) over (log10 Lambda, log10 m_X), not an
+  MCMC posterior
+☑ Random seed documented for the legacy MCMC module (default: 42, configurable via --seed flag) — not used
+  to produce the reported result
+☐ N/A — MCMC convergence diagnostics (R-hat, N_eff, tau): not applicable; no MCMC run was used for the
+  reported result
+☐ N/A — confidence intervals / posterior predictive checks: not applicable to a deterministic grid result
+☐ N/A — prior sensitivity for C_i: C_i is not a parameter of the implemented/reported model (the locked
+  operator coefficient is fixed to 1/Lambda^2)
 
 LATEX COMPILATION
 ══════════════════
-☑ Document class: revtex4-2 (PRD style) or iopart (JCAP alternative)
+☑ Document class: revtex4-2 (PRD style, twocolumn)
 ☑ All \ref{} commands resolve correctly (no "??")
 ☑ Bibliography compiles with apsrev4-2.bst
-☑ Equation numbering sequential (1-56 + A1-A3 in appendix)
-☑ No overfull hboxes (line width violations)
-☑ Compiles cleanly: latexmk -pdf manuscript_final.tex
-☑ PDF/A compliant for archiving
+☑ Compiles cleanly: pdflatex -> bibtex -> pdflatex -> pdflatex (verified end-to-end from a fresh
+  extraction of the arXiv upload package, not just from an in-place working copy)
+☑ No author email printed in the manuscript header (author preference)
+☑ No \date{} line in the manuscript (author preference)
 
 REPRODUCIBILITY
 ════════════════
-☑ GitHub repository structured (manuscript/, code/, data/, figures/)
+☑ GitHub repository structured (manuscript/, code/, data/, docs/, figures/, workflow/)
 ☑ README.md with installation instructions
 ☑ requirements.txt with pinned versions
 ☑ Dockerfile for containerized execution
-☑ Data sources linked (Fermi, IceCube, Auger)
-☑ Code comments explain all functions
-☑ Random seeds documented for bit-exact reproducibility
-☑ Code and data publicly available on GitHub
+☑ Data sources linked (Fermi-LAT, IceCube, Pierre Auger)
+☑ Random seeds documented where applicable (legacy MCMC module only)
+☑ Code and manuscript source publicly available on GitHub
 
 ABSTRACT & FORMATTING
 ══════════════════════
-☑ Abstract length: 243 words (JCAP limit: 250)
-☑ Includes: motivation, method, key result, observational status, cosmological impact
-☑ Keywords specified: dark matter, AGN, jets, EFT, multi-messenger
-☑ Author affiliations complete with ORCID
-☑ Acknowledgments section includes funding info
-☑ Supplementary material referenced (Figure S1, code/data links)
+☑ Abstract reflects the deterministic grid result, the locked cross section, and the corrected
+  Hillas range (no stale claims about cosmic abundance or MCMC posteriors)
+☑ Keywords specified: dark matter, AGN, jets, EFT, multi-messenger, deterministic grid inference
+☐ No ORCID listed (author affiliation is "Independent Researcher"; not claimed otherwise)
+☑ Acknowledgments state the work was conducted independently without external funding
 
 PEER REVIEW RESPONSE
 ════════════════════
-☑ All 7 mandatory corrections addressed (Issues 2.1-2.7)
-☑ 5 recommended enhancements implemented (Issues 3.1-3.5)
-☑ Line-by-line comments incorporated (Section 4 of review)
-☑ Limitations consolidated (new Section 5.5)
-☑ Response letter drafted (docs/peer_review_response.txt)
-
-JOURNAL-SPECIFIC REQUIREMENTS
-══════════════════════════════
-PRD (Physical Review D):
-☑ RevTeX4-2 format with twocolumn option
-☑ Equation numbers on left
-☑ Figures embedded or separate EPS/PDF files
-☑ Reference format: [1] Author et al., Journal Volume, Page (Year)
-
-JCAP (Alternative):
-☑ iopart.cls LaTeX class
-☑ Section numbering: 1., 1.1., 1.1.1.
-☑ Figures as separate files (EPS preferred)
-☑ Reference format: [1] Author et al. Year Journal Volume Page
+☐ Not yet drafted — docs/peer_review_response.txt is currently a blank template (no referee comments
+  have been received; this is a preprint, not under journal review)
 
 FINAL VALIDATION
 ═════════════════
-☑ Spell-check completed (US English)
-☑ Grammar verified (Grammarly Premium pass)
-☑ All co-authors approved (if applicable)
-☑ Funding acknowledgments verified with grants office
-☑ Ethics statement (N/A - theoretical work, no human/animal subjects)
-☑ Data availability statement included (Appendix B)
+☐ Not independently re-verified this pass — spell-check / grammar pass
 ☑ Conflict of interest: None declared
+☑ Ethics statement: N/A — theoretical work, no human/animal subjects
+☑ Data/code availability statement included (manuscript Appendix C)
 
 PRE-SUBMISSION TESTS
 ═════════════════════
-☑ Compiled on fresh LaTeX installation (TeXLive 2023)
-☑ All figures display correctly in compiled PDF
-☑ Hyperlinks functional (DOIs, arXiv, URLs)
-☑ Cross-references resolve (Eq. X, Fig. Y, Sec. Z)
-☑ PDF size < 10 MB (journal limit)
-☑ File naming convention: surname_manuscript_YYYYMMDD.pdf
+☑ Compiled on a fresh TeXLive installation
+☑ All figures display correctly in the compiled PDF
+☑ Cross-references resolve (Eq., Fig., Sec.)
+☑ Tested end-to-end: zip the arXiv package -> extract into an empty directory -> compile -> inspect PDF
 
 SUBMISSION MATERIALS PREPARED
 ══════════════════════════════
-☑ manuscript_final.pdf (compiled main document)
 ☑ manuscript_final.tex (LaTeX source)
 ☑ references.bib (BibTeX file)
-☑ figures/ folder (all 5 figures as separate PDFs)
-☑ supplementary_material.pdf (Figure S1)
-☑ cover_letter.pdf (explaining novel contributions)
-☑ response_to_reviewers.pdf (if revision)
+☑ figures/ folder (4 figures referenced by the manuscript, as separate PDFs)
+☐ No compiled manuscript_final.pdf committed to the repository (compile locally from the .tex source;
+  see REPRODUCING.md)
+☐ No supplementary_material.pdf, cover_letter.pdf, or response_to_reviewers.pdf exist — none are
+  referenced by the manuscript or required for an arXiv preprint submission
 
 GITHUB REPOSITORY (COMPLETED)
 ═══════════════════════════════
-☑ Code repository public at https://github.com/kirtii56/Agnn
+☑ Code repository public at https://github.com/kirtii56/agn
 ☑ All analysis code committed
 ☑ README.md with installation instructions
 ☑ MIT License included
-☑ Documentation complete
 ☑ Figures generated and committed
-☑ Repository ready for arXiv supplementary material link
 
 ARXIV SUBMISSION
 ═════════════════
-☐ Upload manuscript_final.tex + references.bib + figures/
-☐ Select categories: astro-ph.HE (primary), hep-ph, astro-ph.CO
-☐ Verify compiled PDF matches local version
+☐ Upload manuscript_final.tex + references.bib + figures/ (the arXiv upload package)
+☐ Select categories: astro-ph.HE (primary), hep-ph (cross-list)
+☐ Verify compiled PDF matches the local test compile
 ☐ Include DOI/journal ref after acceptance
-☐ Update metadata.json with arXiv ID
+☐ Update metadata.json with the arXiv ID once assigned
 
 ═══════════════════════════════════════════════════════════════
-STATUS: ✅ ARXIV PREPRINT READY
-NEXT STEP: ArXiv submission (astro-ph.HE)
-COMPLETED: November 3, 2025
+STATUS: Preprint-ready, not yet submitted to arXiv
+NEXT STEP: ArXiv submission (astro-ph.HE primary, hep-ph cross-list)
 ═══════════════════════════════════════════════════════════════

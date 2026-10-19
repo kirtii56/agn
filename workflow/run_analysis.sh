@@ -3,14 +3,19 @@
 # Master Analysis Execution Script
 # =================================
 #
-# Runs the complete UHDM AGN analysis pipeline:
+# Runs the pipeline that actually produces the reported result:
 # 1. GRMHD acceleration calculations
 # 2. EFT cross section calculations
 # 3. PDF integration
-# 4. Monte Carlo parameter scan
-# 5. Observational constraints
+# 4. Observational constraints
+# 5. Deterministic (log10 Lambda, log10 m_X) grid reproduction -- this IS the
+#    reported scientific result
 # 6. Figure generation
 # 7. Manuscript compilation
+#
+# The legacy MCMC module (monte_carlo_sampling.py) is NOT run by this script.
+# It is not used to produce the reported result; run it yourself only if you
+# specifically want to exercise that legacy code path (see REPRODUCING.md).
 #
 
 set -e  # Exit on error
@@ -51,22 +56,20 @@ python ${CODE_DIR}/observational_constraints.py
 echo "✓ Complete"
 echo ""
 
-# Step 5: Monte Carlo Sampling (WARNING: This is time-consuming!)
-echo "[5/7] Running Monte Carlo parameter scan..."
-echo "      (This may take several hours with 10^6 samples)"
-echo "      Set n_walkers=16, n_steps=500 for quick test"
-python ${CODE_DIR}/monte_carlo_sampling.py
+# Step 5: Deterministic grid reproduction -- THE reported result
+echo "[5/7] Reproducing the deterministic (log10 Lambda, log10 m_X) grid result..."
+python ${CODE_DIR}/deterministic_grid_reproduction.py
 echo "✓ Complete"
 echo ""
 
-# Step 6: Verify all figures generated
-echo "[6/7] Verifying figure generation..."
+# Step 6: Generate and verify figures
+echo "[6/7] Generating figures..."
+python ${CODE_DIR}/generate_figures.py --output ${FIGURES_DIR}/
 REQUIRED_FIGURES=(
     "fig1_eft_validity_corrected.pdf"
     "fig2_gamma_max.pdf"
     "fig3_production_rate.pdf"
     "fig4_constraints.pdf"
-    "figS1_mcmc_diagnostics.pdf"
 )
 
 for fig in "${REQUIRED_FIGURES[@]}"; do
@@ -103,12 +106,12 @@ echo "========================================="
 echo ""
 echo "Output files:"
 echo "  Figures: ${FIGURES_DIR}/"
-echo "  Data: data/mc_posterior_samples.h5"
 echo "  Manuscript: ${MANUSCRIPT_DIR}/manuscript_final.pdf"
 echo ""
 echo "Next steps:"
 echo "  1. Review all figures in ${FIGURES_DIR}/"
-echo "  2. Check MCMC convergence diagnostics"
-echo "  3. Review manuscript PDF"
-echo "  4. Run validation: python -m pytest tests/"
+echo "  2. Review manuscript PDF"
+echo ""
+echo "Not run by this script (legacy, not used for the reported result):"
+echo "  python ${CODE_DIR}/monte_carlo_sampling.py"
 echo ""

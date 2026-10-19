@@ -20,19 +20,18 @@
     "gamma-ray astronomy",
     "neutrino astronomy",
     "cosmic rays",
-    "Bayesian inference",
-    "MCMC"
+    "deterministic grid inference"
   ],
   "publication": {
-    "status": "preprint",
-    "submission_date": "2025-11-03"
+    "status": "preprint, not yet submitted to arXiv",
+    "submission_date": null
   },
   "preprint": {
     "arxiv_category": "astro-ph.HE",
-    "github_url": "https://github.com/kirtii56/Agnn"
+    "github_url": "https://github.com/kirtii56/agn"
   },
   "data_repository": {
-    "github_url": "https://github.com/kirtii56/Agnn",
+    "github_url": "https://github.com/kirtii56/agn",
     "license": "MIT"
   },
   "computational_requirements": {
@@ -96,7 +95,7 @@
     },
     {
       "name": "icecube_neutrino_limits.csv",
-      "description": "IceCube neutrino stacking analysis limits (1,163 AGN)",
+      "description": "IceCube neutrino energy-intensity limit used by this pipeline (not an independently verified reproduction of any specific published IceCube sample size or statistical analysis)",
       "source": "IceCube Collaboration public data",
       "size_mb": 0.1,
       "citation": "IceCube Collaboration 2023, ApJ 954, 75"
@@ -116,10 +115,10 @@
     }
   ],
   "version": "2.0-FINAL",
-  "last_updated": "2025-11-03",
+  "last_updated": "2026-10-19",
   "package_status": "preprint_ready",
   "revisions": {
-    "v1.0": "Initial submission",
-    "v2.0-FINAL": "Publication-ready version with all corrections applied (Issues 2.1-2.7)"
+    "v1.0": "Initial draft",
+    "v2.0-FINAL": "Fully re-audited version: corrected EFT cross section formula, corrected Hillas confinement coefficient, removed the unsupported cosmic-abundance (Eq. 45) and jet-scattering cross-section claims, fixed the IceCube observable/units mismatch, fixed figure numbering, switched to a deterministic grid-verified inference in place of the legacy MCMC result"
   }
 }

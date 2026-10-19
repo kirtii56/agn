@@ -1,7 +1,7 @@
 # Reproducing Results
 
 **Version:** 2.0-FINAL
-**Last Updated:** November 3, 2025
+**Last Updated:** 2026-10-19
 
 The reported scientific result is a **deterministic** characterization of the
 `(log10 Lambda, log10 m_X)` parameter space. It does **not** use an MCMC posterior.
@@ -270,5 +270,5 @@ For code documentation:
 
 ---
 
-**Last Updated:** November 3, 2025
+**Last Updated:** 2026-10-19
 **Version:** 2.0-FINAL

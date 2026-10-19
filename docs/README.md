@@ -1,4 +1,4 @@
-# Ultra-High-Density Matter in Active Galactic Nuclei
+# Ultra-Heavy Dark Matter Production in Active Galactic Nucleus Jets
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -185,7 +185,7 @@ If you use this code or data, please cite:
   title = {Ultra-Heavy Dark Matter Production in Active Galactic Nucleus Jets:
            A Falsifiable Multi-Messenger Framework},
   year = {2025},
-  note = {Preprint available at https://github.com/kirtii56/Agnn}
+  note = {Preprint available at https://github.com/kirtii56/agn}
 }
 ```
 
@@ -203,7 +203,7 @@ This project is licensed under the MIT License - see the [LICENSE](../LICENSE) f
 
 For questions or issues:
 - Open an issue on GitHub
-- Email: [contact email]
+- Email: kirtiptdr174@gmail.com
 
 ## Validation Checklist
 
@@ -211,7 +211,6 @@ Before submission, verify:
 
 - [ ] All figures regenerate from code
 - [ ] Deterministic (log10 Λ, log10 m_X) grid characterization reproducible
-- [ ] Unit tests pass: `pytest tests/`
 - [ ] Manuscript compiles without errors
 - [ ] Data provenance documented
 - [ ] Random seeds set for reproducibility
@@ -221,6 +220,6 @@ See `docs/submission_checklist.txt` for full checklist.
 
 ---
 
-**Status**: ArXiv Preprint Ready
+**Status**: Preprint-ready, not yet submitted to arXiv
 **Version**: 2.0-FINAL
-**Last Updated**: November 3, 2025
+**Last Updated**: 2026-10-19

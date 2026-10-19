@@ -7,7 +7,7 @@
 **Affiliation:** Independent Researcher
 **Contact:** kirtiptdr174@gmail.com
 **Version:** 2.0-FINAL
-**Last Updated:** November 3, 2025
+**Last Updated:** 2026-10-19
 
 ---
 
@@ -26,10 +26,8 @@ We investigate whether AGN jets can produce ultra-heavy dark matter (UHDM) with 
 ```
 UHDM_AGN_Paper_Final/
 ├── manuscript/
-│   ├── manuscript_final.tex          # LaTeX source (RevTeX4-2 format)
-│   ├── manuscript_final.pdf          # Compiled PDF
-│   ├── references.bib                # BibTeX bibliography
-│   └── supplementary_material.pdf    # MCMC diagnostics (Figure S1)
+│   ├── manuscript_final.tex          # LaTeX source (RevTeX4-2 format) — compile locally, no PDF is committed
+│   └── references.bib                # BibTeX bibliography
 ├── figures/
 │   ├── fig1_eft_validity_corrected.pdf    # EFT cutoff plot (regenerated)
 │   ├── fig2_gamma_max.pdf                 # Max Lorentz factors
@@ -39,7 +37,7 @@ UHDM_AGN_Paper_Final/
 ├── code/
 │   ├── grmhd_acceleration.py         # Lorentz factor calculations
 │   ├── eft_cross_sections.py         # EFT production cross sections
-│   ├── monte_carlo_sampling.py       # MCMC parameter scan (emcee)
+│   ├── monte_carlo_sampling.py       # Legacy emcee MCMC scan — not used for the reported result
 │   ├── pdf_integration.py            # Parametric/exploratory q-qbar luminosity stand-in (not CT18 NNLO)
 │   ├── observational_constraints.py  # Fermi/IceCube/Auger limits
 │   └── requirements.txt              # Python dependencies
