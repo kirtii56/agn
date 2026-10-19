@@ -18,7 +18,7 @@ Active galactic nucleus (AGN) jets accelerate particles to Lorentz factors $\gam
 
 Energy-loss-corrected calculations yield maximum particle Lorentz factors $\gamma_{e,\rm max} \sim 10^6$--$10^7$ (electrons, energy-loss-limited) and, from the Hillas confinement limit alone (curvature-radiation losses not modeled for protons), $\gamma_{p,\rm max} \sim 3.2\times10^{10}$--$3.2\times10^{14}$ (protons). We model UHDM production via the dimension-6 contact interaction $\mathcal{L}_{\rm int} = (1/\Lambda^2)(\bar{q}q)(\bar{X}X)$ for $q\bar{q}\to X\bar{X}$, with $\Lambda$ treated as a scanned rather than fixed parameter.
 
-A deterministic, grid-verified analysis of the $(\Lambda, m_X)$ parameter space shows that the region simultaneously above the pair-production threshold and within the EFT-validity condition (at the fixed benchmark collision energy $\sqrt{\hat{s}}\approx3.16\times10^8$ GeV) is exactly $3.16\times10^8 < \Lambda \le 10^{11}$ GeV, $10^6 \le m_X < 1.58\times10^8$ GeV. Within this entire region, predicted Fermi-LAT, IceCube, and Pierre Auger multi-messenger fluxes remain 2.6 to 24.8 orders of magnitude below the observational limits implemented in this pipeline, even at the most favorable parameter combination. Current multi-messenger observations, as implemented here, therefore provide no data-driven constraint on this model anywhere in the explored, theoretically self-consistent parameter space; the boundaries of the allowed region are set entirely by kinematics and EFT self-consistency, not by data.
+A deterministic, grid-verified analysis of the $(\Lambda, m_X)$ parameter space shows that the region simultaneously above the pair-production threshold and within the EFT-validity condition (at the fixed benchmark collision energy $\sqrt{\hat{s}}\approx3.16\times10^8$ GeV) is exactly $3.16\times10^8 < \Lambda \le 10^{11}$ GeV, $10^6 \le m_X < 1.58\times10^8$ GeV. Within this entire region, predicted Fermi-LAT, IceCube, and Pierre Auger fluxes remain 2.6 to 24.8 orders of magnitude below the limits we use, even at the most favorable parameter combination. By this measure, current multi-messenger data place no constraint on the model anywhere in the explored, theoretically self-consistent parameter space; the allowed region's boundaries come entirely from kinematics and EFT self-consistency, not from data.
 \end{abstract}
 
 \keywords{dark matter, galaxies: active, galaxies: jets, particle physics, astroparticle physics, effective field theory}
@@ -115,9 +115,9 @@ For $B = 10^2$--$10^4$ G and $R = 10^{15}$--$10^{17}$ cm, the Hillas confinement
 \label{eq:gamma_p_result}
 \end{equation}
 
-\noindent Proton curvature-radiation losses are not modeled in the present calculation, so Eq.~\ref{eq:gamma_p_result} is a confinement (acceleration-capability) limit only, not a loss-limited maximum; it does not by itself establish that protons are actually accelerated to, or observed at, the upper end of this range.
+\noindent We do not model proton curvature-radiation losses here, so Eq.~\ref{eq:gamma_p_result} gives a confinement ceiling -- what the magnetic field can in principle hold onto -- rather than a loss-limited maximum; it does not by itself mean protons actually reach, or are observed at, the upper end of this range.
 
-The Hillas ceiling in Eq.~\ref{eq:gamma_p_result} lies well above the observed UHECR maximum rigidities, $E_{\rm cut} \lesssim 5$ EeV \citep{Auger2020}; magnetic confinement in the jet is therefore not itself the limiting factor for the highest-energy protons observed, and the present calculation does not identify which additional (unmodeled) loss mechanism sets the observed cutoff.
+The Hillas ceiling in Eq.~\ref{eq:gamma_p_result} lies well above the observed UHECR maximum rigidities, $E_{\rm cut} \lesssim 5$ EeV \citep{Auger2020}; magnetic confinement in the jet is therefore not itself the limiting factor for the highest-energy protons observed, and this calculation does not identify which additional, unmodeled loss mechanism sets the observed cutoff.
 
 \subsection{Center-of-Mass Energies}
 
@@ -176,7 +176,7 @@ We consider a single dimension-6 contact interaction between the Standard Model 
 \label{eq:EFT_Lagrangian}
 \end{equation}
 
-where $\Lambda$ is the effective-theory cutoff scale, treated in this work as a scanned parameter rather than fixed to any particular UV completion scale.
+where $\Lambda$ is the cutoff scale of the effective theory; we scan over it rather than fix it to a particular UV completion.
 
 The corresponding tree-level partonic cross section for $q\bar{q} \to X\bar{X}$, for massless initial-state quarks, is:
 
@@ -216,7 +216,7 @@ Integration limits: $r_{\rm min} = 10 r_g$ (innermost stable orbit), $r_{\rm max
 
 \subsection{PDF-Weighted Quark-Antiquark Luminosity}
 
-For the $q\bar{q}\to X\bar{X}$ channel adopted in this work, the relevant object is the quark-antiquark parton luminosity $d\mathcal{L}_{q\bar q}/d\tau$. In this analysis we use a parametric functional form for this luminosity, of the form $A\tau^{a}(1-\tau)^{n}$, as an exploratory/diagnostic stand-in. This parametrization is \textbf{not} CT18 NNLO and has \textbf{not} been benchmarked or validated against CT18 NNLO or any other real parton distribution function set; no claim of fidelity to a specific PDF set is made, and no factorization or renormalization scale is currently implemented in this treatment. Replacing this stand-in with an actual PDF grid (e.g.\ via LHAPDF) and an explicitly chosen factorization scale is deferred to future work.
+For the $q\bar{q}\to X\bar{X}$ channel, the relevant object is the quark-antiquark parton luminosity $d\mathcal{L}_{q\bar q}/d\tau$. We use a parametric functional form, $A\tau^{a}(1-\tau)^{n}$, as a placeholder for this luminosity rather than a validated PDF set: it is not CT18 NNLO, has not been checked against CT18 NNLO or any other global fit, and carries no factorization or renormalization scale. Swapping in an actual PDF grid (e.g.\ via LHAPDF) with an explicit factorization scale is left to future work.
 
 For $s_{pp} = (2 \times 10^{18})^2$ eV$^2$ and $m_X = 10^{17}$ eV, the required $\tau_{\rm min} = 4m_X^2/s_{pp} \approx 10^{-2}$.
 
@@ -227,7 +227,7 @@ Rather than a stochastic (MCMC) parameter scan, the reported inference is obtain
 The prior is log-uniform over $\log_{10}(\Lambda/{\rm GeV})\in[8,11]$ and $\log_{10}(m_X/{\rm GeV})\in[6,10]$. For the fixed benchmark collision energy adopted throughout this work, $\sqrt{\hat{s}} = 3.16\times10^8$ GeV, the implemented likelihood is:
 \begin{itemize}
 \item flat (constant) in the sampled coordinates $(\log_{10}\Lambda,\log_{10}m_X)$ throughout the region where both the EFT-validity condition ($\sqrt{\hat s}<\Lambda$) and the pair-production threshold ($\hat s\ge 4m_X^2$, with strict inequality once the likelihood's own zero-cross-section rejection is accounted for) are satisfied;
-\item assigned the value $\log\mathcal{L}=-10^{10}$ outside this region. This is a strong numerical suppression, not a mathematically exact zero probability: the corresponding unnormalized posterior density, $\exp(-10^{10})$, is a nonzero but numerically negligible real number that underflows to zero in floating-point evaluation.
+\item assigned the value $\log\mathcal{L}=-10^{10}$ outside this region. This is a strong numerical suppression rather than a mathematically exact zero: $\exp(-10^{10})$ is technically nonzero, though it underflows to zero in floating-point arithmetic.
 \end{itemize}
 
 Exhaustive grid evaluation (a $221$-point scan over this two-dimensional space, together with the closed-form boundary conditions derived from $\sqrt{\hat s}$) confirms that the accepted (theoretically valid) region is exactly the rectangle
@@ -237,7 +237,7 @@ Exhaustive grid evaluation (a $221$-point scan over this two-dimensional space, 
 \end{equation}
 and that within this entire rectangle the three implemented observational penalty terms (Fermi-LAT, IceCube, Pierre Auger; Section~\ref{sec:constraints}) never activate: predicted fluxes remain many orders of magnitude below the hardcoded limits everywhere probed (Section~\ref{sec:results}). No grid point anywhere in the scanned space returns a likelihood value other than exactly the flat in-region value or exactly the out-of-region penalty --- there is no intermediate, data-shaped structure for a sampler to explore.
 
-Because the implemented likelihood is provably flat in the sampled coordinates throughout the accepted region, with its boundaries supplied entirely by the fixed partonic benchmark and the EFT-validity/threshold conditions rather than by any data-dependent feature, a stochastic MCMC sampler would add only sampling noise and convergence-diagnostic overhead without adding information beyond this deterministic characterization. We therefore report the deterministic result directly rather than an MCMC posterior.
+Because this likelihood is provably flat across the accepted region, with boundaries set entirely by the fixed partonic benchmark and the EFT-validity/threshold conditions rather than by any data-dependent feature, an MCMC sampler would add only sampling noise and convergence-diagnostic overhead on top of this exact result. We therefore report the deterministic characterization directly rather than an MCMC posterior.
 
 \section{Multi-Messenger Observational Constraints}
 \label{sec:constraints}
@@ -267,16 +267,16 @@ For $m_X = 10^{17}$ eV, $P_{\rm BZ} = 10^{46}$ erg s$^{-1}$, and $f_{\rm budget}
 
 \subsection{IceCube Neutrino Constraints}
 
-The IceCube AGN-neutrino correlation literature \citep{IceCube2024} provides contextual background for this comparison; the present pipeline does not reproduce that study's specific statistical analysis and instead implements its own energy-intensity comparison, described below.
+The IceCube AGN-neutrino correlation literature \citep{IceCube2024} provides context for this comparison; we do not reproduce that study's specific statistical analysis here, but instead use our own energy-intensity comparison, described below.
 
-The present pipeline compares a predicted per-source neutrino energy intensity to an implemented pipeline limit:
+We compare a predicted per-source neutrino energy intensity to the limit below:
 
 \begin{equation}
 \phi_\nu^{\rm pred} < \phi_\nu^{\rm limit} = 10^{-18} \text{ GeV cm}^{-2} \text{ s}^{-1} \text{ sr}^{-1} \quad (1 \text{ TeV} \le E_\nu \le 10 \text{ PeV})
 \label{eq:IceCube_limit}
 \end{equation}
 
-where $\phi_\nu^{\rm pred}$ is computed from the predicted per-source luminosity as an isotropic-equivalent energy intensity (GeV cm$^{-2}$ s$^{-1}$ sr$^{-1}$). This is the limit implemented in the present analysis pipeline; it is not claimed to be an independently verified current IceCube experimental sensitivity, and no conversion is asserted between this quantity and any specific published IceCube flux limit. This comparison is applied per individual source:
+where $\phi_\nu^{\rm pred}$ is computed from the predicted per-source luminosity as an isotropic-equivalent energy intensity (GeV cm$^{-2}$ s$^{-1}$ sr$^{-1}$). This is the limit we use in our analysis; we do not claim it reproduces IceCube's current experimental sensitivity, and we do not assert any direct conversion to a specific published IceCube flux limit. This comparison is applied per individual source:
 
 This constrains photopion production optical depth $f_{p\gamma} < 0.01$, consistent with optically thin jets.
 
@@ -309,7 +309,7 @@ All predictions lie below Fermi-LAT energy budget constraint (Eq.~\ref{eq:Ndot_l
 
 \subsection{Cosmic Abundance}
 
-A quantitative cosmological abundance contribution from AGN-produced UHDM is not derived in the present analysis. Estimating $\Omega_X^{\rm AGN}$ would require, at minimum, an independently specified AGN population density or normalization volume (rather than a raw source count) and a reproducible cosmological calculation connecting the per-source production rate to a mean cosmic mass density; neither is established here. We therefore do not report a quantitative bound on $\Omega_X^{\rm AGN}$. AGN jets are, in any case, not expected to be the dominant UHDM production mechanism, but may represent a distinct population with unique observational signatures.
+We do not derive a quantitative cosmological abundance contribution from AGN-produced UHDM in this analysis. Estimating $\Omega_X^{\rm AGN}$ would require, at minimum, an independently specified AGN population density or normalization volume (rather than a raw source count) and a reproducible cosmological calculation connecting the per-source production rate to a mean cosmic mass density; neither is established here. We therefore do not report a quantitative bound on $\Omega_X^{\rm AGN}$. AGN jets are, in any case, not expected to be the dominant UHDM production mechanism, but may represent a distinct population with unique observational signatures.
 
 \subsection{UHDM Survival and Escape from Jets}
 
@@ -322,7 +322,7 @@ v_{\rm esc} = \sqrt{\frac{2GM}{r}} \sim 0.1c
 
 Since UHDM is produced with $v_X \sim c$, it is gravitationally unbound and escapes the AGN's potential well.
 
-A quantitative calculation of $X$'s interaction with jet matter during transit (an optical depth or thermalization timescale) is not part of the present model. Such a calculation would require: (i) a post-production $X$ energy/momentum distribution, which is not modeled here; (ii) a proton-level (not purely partonic) treatment of the jet target, since jet matter is confined hadronic matter rather than free quarks, requiring a parton-distribution convolution analogous to, but distinct from, the production-side calculation; and (iii) a transport/energy-loss calculation, since a single elastic-scattering cross section does not by itself establish a thermalization rate. None of these ingredients is specified in the present repository. Consequently, no quantitative optical-depth or thermalization result is used anywhere in this paper's conclusions; only the gravitational escape-velocity argument above (Eq.~\ref{eq:v_esc}), which does not depend on any jet-matter interaction cross section, supports the assumption that produced UHDM is not gravitationally recaptured. This omission does not affect the deterministic $(\Lambda,m_X)$ production/inference result reported in Section~\ref{sec:results}, which does not depend on any post-production interaction physics.
+We do not attempt a quantitative optical-depth or thermalization calculation for $X$'s passage through jet matter. Doing so would need: a post-production energy/momentum distribution for $X$, which we do not model; a proton-level (not purely partonic) treatment of the jet target, since jet matter is confined hadronic matter rather than free quarks -- a parton-distribution convolution distinct from the production-side calculation above; and a transport/energy-loss calculation, since a single elastic-scattering cross section does not by itself fix a thermalization rate. None of this is worked out here, so no thermalization result enters our conclusions; only the gravitational escape-velocity argument above (Eq.~\ref{eq:v_esc}), which needs no jet-matter cross section, supports treating the produced UHDM as unbound. This gap does not affect the deterministic $(\Lambda,m_X)$ result in Section~\ref{sec:results}, which does not depend on any post-production interaction physics.
 
 \subsection{Observational Prospects}
 
@@ -343,7 +343,7 @@ Time-correlated signals in GW catalogs + UHDM detectors would be a smoking gun f
 
 \subsubsection{Direct Detection Threshold}
 
-The following is a hypothetical detector-sensitivity comparison, independent of the AGN-jet production/inference calculation above: it asks what DM--target interaction cross section a future direct-detection experiment would need in order to see a relic UHDM population, and is not a prediction of the present EFT model. We denote this hypothetical required cross section $\sigma_X^{\rm det}$ to avoid confusion with any jet-matter interaction quantity (no such quantity is computed in this paper; see the previous subsection).
+This is a separate, hypothetical detector-sensitivity comparison, independent of the AGN-jet production calculation above: it asks what DM--target interaction cross section a future direct-detection experiment would need in order to see a relic UHDM population, and it is not a prediction of our EFT model. We denote this hypothetical required cross section $\sigma_X^{\rm det}$ to avoid confusion with any jet-matter interaction quantity (no such quantity is computed in this paper; see the previous subsection).
 
 For next-generation experiments ($N_{\rm targets} \sim 10^{32}$, 10-year exposure), minimum detectable flux:
 
@@ -390,7 +390,7 @@ We have established a falsifiable framework for ultra-heavy dark matter producti
 \item Center-of-mass energies: $\sqrt{s} \sim 10^{17}$--$10^{18}$ eV, giving a fixed benchmark $\sqrt{\hat{s}} \approx 3.16\times10^8$ GeV for the partonic process
 \item Deterministic $(\Lambda, m_X)$ inference: the region simultaneously above pair-production threshold and EFT-valid is exactly $3.16\times10^8 < \Lambda \le 10^{11}$ GeV, $10^6 \le m_X < 1.58\times10^8$ GeV
 \item Cosmic abundance: a quantitative bound on $\Omega_X^{\rm AGN}$ is not derived in this analysis; doing so would require an independently specified AGN population density/normalization volume and a reproducible cosmological calculation, neither of which is established here (see Section~\ref{sec:results})
-\item Multi-messenger constraints: within the current implementation and explored parameter space, the implemented Fermi-LAT, IceCube, and Pierre Auger observational limits do not generate a meaningful likelihood penalty anywhere in the theoretically accepted region --- this is not a claim about the true current sensitivity of these experiments, only about the pipeline as implemented here
+\item Multi-messenger constraints: across the explored parameter space, the Fermi-LAT, IceCube, and Pierre Auger limits we use never generate a meaningful likelihood penalty anywhere in the theoretically accepted region -- a statement about our pipeline, not a claim about these experiments' true current sensitivity
 \end{itemize}
 
 Beyond numerical predictions, this work establishes a systematic methodology connecting micro-physics to macro-observables. Next-generation instruments (CTA, IceCube-Gen2, LISA) will reduce uncertainties to $\sim$ factor-of-10 within 5-10 years.
@@ -415,7 +415,7 @@ The quark-antiquark luminosity used in Section~\ref{sec:production} is implement
 \frac{d\mathcal{L}_{q\bar q}}{d\tau} = A\,\tau^{a}(1-\tau)^{n}, \label{eq:pdf_parametric}
 \end{equation}
 
-with default values $A=0.5$, $a=-1.0$, $n=5.0$. This form is an exploratory/diagnostic stand-in only. It is \textbf{not} CT18 NNLO, has \textbf{not} been benchmarked or validated against CT18 NNLO or any other real parton distribution function set, and no claim of fidelity to any specific PDF set is made. No factorization or renormalization scale is currently implemented in this treatment. Replacing this stand-in with an actual PDF grid (e.g.\ via LHAPDF) and an explicitly chosen factorization scale is deferred to future work.
+using default values $A=0.5$, $a=-1.0$, $n=5.0$. As noted in Section~\ref{sec:production}, this is a placeholder rather than a validated PDF set: it has not been checked against CT18 NNLO or any other global fit, and it carries no factorization or renormalization scale. A real PDF grid (e.g.\ via LHAPDF) with an explicit factorization scale is left for future work.
 
 \section{Deterministic Inference Details}
 \label{app:mcmc}
