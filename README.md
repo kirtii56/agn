@@ -15,9 +15,9 @@
 
 This repository contains the complete research package for **"Ultra-Heavy Dark Matter Production in Active Galactic Nucleus Jets: A Falsifiable Multi-Messenger Framework"**.
 
-We investigate whether AGN jets can produce ultra-heavy dark matter (UHDM) with masses $10^{15}$--$10^{19}$ eV through Standard Model particle collisions at center-of-mass energies $\sqrt{s} \sim 10^{17}$--$10^{18}$ eV. Using GRMHD simulations, effective field theory parametrization, and multi-messenger observations (Fermi-LAT, IceCube, Pierre Auger), we predict production rates $\dot{N}_X \sim 10^{10}$--$10^{15}$ s$^{-1}$ per AGN with factor-of-$10^3$ systematic uncertainties.
+We investigate whether AGN jets can produce ultra-heavy dark matter (UHDM) with masses m_X = 10^15–10^19 eV. AGN jets accelerate particles to Lorentz factors γ ~ 10^9, enabling center-of-mass collision energies √s ~ 10^17–10^18 eV. We model UHDM production via the dimension-6 contact interaction L_int = (1/Λ²)(q̄q)(X̄X) for q q̄ → X X̄, with Λ treated as a scanned rather than fixed parameter. Energy-loss-corrected calculations give maximum particle Lorentz factors γ_e,max ~ 10^6–10^7 (electrons, energy-loss-limited) and, from the Hillas confinement limit alone (proton curvature-radiation losses are not modeled), γ_p,max ~ 3.2×10^10–3.2×10^14 (protons).
 
-**Key Finding:** AGN jets contribute $\Omega_X^{\rm AGN} \lesssim 10^{-10}\Omega_{\rm DM}$---subdominant to primordial mechanisms but exhibiting unique spatial clustering and kinematic signatures testable by next-generation experiments (CTA, IceCube-Gen2, LISA).
+**Key Finding:** A deterministic, grid-verified analysis of the (Λ, m_X) parameter space shows the region simultaneously above the pair-production threshold and within the EFT-validity condition is exactly 3.16×10^8 < Λ ≤ 10^11 GeV, 10^6 ≤ m_X < 1.58×10^8 GeV. Within this entire region, predicted Fermi-LAT, IceCube, and Pierre Auger fluxes remain 2.6 to 24.8 orders of magnitude below the observational limits implemented in this pipeline — current multi-messenger data, as implemented here, provide no data-driven constraint on this model anywhere in the explored parameter space; the region's boundaries are set by kinematics and EFT self-consistency, not by data. A quantitative cosmic-abundance bound (Ω_X^AGN) is not derived in this analysis — see the manuscript for the reasoning.
 
 ---
 
@@ -126,11 +126,11 @@ See [REPRODUCING.md](REPRODUCING.md) for detailed instructions, troubleshooting,
 
 ## Key Results
 
-- **Maximum Lorentz factors**: $\gamma_{e,\rm max} \sim 10^6$--$10^7$ (electrons), $\gamma_{p,\rm max} \sim 10^9$--$10^{10}$ (protons)
-- **Center-of-mass energies**: $\sqrt{s} \sim 10^{17}$--$10^{18}$ eV, fixed benchmark $\sqrt{\hat{s}} \approx 3.16\times10^8$ GeV; EFT validity requires $\Lambda > 3.16\times10^8$ GeV
-- **Production rates**: $\dot{N}_X \sim 10^{10}$--$10^{15}$ s$^{-1}$ per AGN (factor-of-$10^3$ uncertainty)
-- **Cosmic abundance**: $\Omega_X^{\rm AGN} \lesssim 10^{-10}\Omega_{\rm DM}$ (subdominant)
-- **Multi-messenger constraints**: All current data (Fermi-LAT, IceCube, UHECR) allow predicted rates
+- **Maximum Lorentz factors**: γ_e,max ~ 10^6–10^7 (electrons, energy-loss-limited); γ_p,max ~ 3.2×10^10–3.2×10^14 (protons, Hillas confinement limit only — proton curvature-radiation losses not modeled)
+- **Center-of-mass energies**: √s ~ 10^17–10^18 eV; fixed benchmark √ŝ ≈ 3.16×10^8 GeV
+- **Allowed (Λ, m_X) region**: 3.16×10^8 < Λ ≤ 10^11 GeV, 10^6 ≤ m_X < 1.58×10^8 GeV — from a deterministic 221-point grid (not MCMC)
+- **Multi-messenger constraints**: predicted Fermi-LAT, IceCube, and Pierre Auger fluxes are 2.6–24.8 orders of magnitude below current limits everywhere in the allowed region — current observations provide no data-driven constraint, as implemented in this pipeline
+- **Cosmic abundance**: no quantitative Ω_X^AGN bound is derived in this analysis (see manuscript for why)
 
 ---
 
@@ -212,7 +212,7 @@ Figures are saved in `figures/` as vector PDFs (300 dpi).
 ## Reproducibility
 
 ### Computational Requirements
-- **Deterministic $(\Lambda,m_X)$ grid evaluation**: seconds on a single core
+- **Deterministic (Λ, m_X) grid evaluation**: seconds on a single core
 - **Legacy MCMC module** (`monte_carlo_sampling.py`, not used for the reported result): ~1 minute for its 10^3-sample default
 
 ### Random Seeds
