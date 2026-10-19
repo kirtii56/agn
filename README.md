@@ -5,6 +5,7 @@
 
 **Authors:** Kirti Patidar
 **Affiliation:** Independent Researcher
+**Contact:** kirtiptdr174@gmail.com
 **Version:** 2.0-FINAL
 **Last Updated:** November 3, 2025
 
@@ -273,9 +274,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Kirti Patidar**
 Independent Researcher
+Email: kirtiptdr174@gmail.com
 
 For questions or issues:
 - Open an issue on GitHub
+- Email the author directly
 
 ---
 

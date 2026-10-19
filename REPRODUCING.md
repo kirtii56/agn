@@ -252,6 +252,7 @@ If you encounter issues:
 1. Check `docs/submission_checklist.txt`
 2. Review error messages in terminal output
 3. Open an issue on GitHub: https://github.com/kirtii56/agn/issues
+4. Email: kirtiptdr174@gmail.com
 
 ---
 
