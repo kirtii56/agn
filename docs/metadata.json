@@ -3,8 +3,7 @@
   "authors": [
     {
       "name": "Kirti Patidar",
-      "affiliation": "Independent Researcher",
-      "email": "kirti.research56@gmail.com"
+      "affiliation": "Independent Researcher"
     }
   ],
   "abstract": "We investigate whether AGN jets can produce ultra-heavy dark matter (UHDM) as a Dirac fermion X via the effective contact interaction L_int = (1/Lambda^2)(qbar q)(Xbar X), through the process q qbar -> X Xbar, with corrected partonic cross section sigma_hat = s_hat*beta^3/(48*pi*Lambda^4), beta = sqrt(1 - 4*m_X^2/s_hat). Using GRMHD simulations for jet particle acceleration and this effective-field-theory production channel, we characterize the (log10 Lambda, log10 m_X) parameter space deterministically, using a fixed benchmark collision energy sqrt(s_hat) = 3.16e8 GeV, over the prior Lambda in [1e8, 1e11] GeV, m_X in [1e6, 1e10] GeV. The theoretically accepted region (EFT-valid and above the pair-production threshold) is 3.16e8 < Lambda <= 1e11 GeV, 1e6 <= m_X < 1.58e8 GeV. Within this region, and under the current pipeline's hardcoded Fermi-LAT, IceCube, and Pierre Auger limits, no point produces a nonzero observational penalty -- i.e. the current implementation finds no data-driven constraint on (Lambda, m_X) over the explored, theoretically valid parameter space. This is a statement about the current pipeline as implemented, not an independently verified claim about present-day experimental sensitivity. The reported inference is deterministic (a 221-point grid plus the closed-form region boundaries above); it does not use an MCMC posterior. The current quark-antiquark PDF/luminosity treatment is an exploratory parametric stand-in, not CT18 NNLO, and has not been benchmarked or validated against a real PDF set; a validated LHAPDF/CT18 NNLO implementation is deferred to future (Track B) work.",
