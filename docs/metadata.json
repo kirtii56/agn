@@ -1,0 +1,125 @@
+{
+  "title": "Ultra-Heavy Dark Matter Production in Active Galactic Nucleus Jets: A Falsifiable Multi-Messenger Framework",
+  "authors": [
+    {
+      "name": "Kirti Patidar",
+      "affiliation": "Independent Researcher",
+      "email": "kirti.research56@gmail.com"
+    }
+  ],
+  "abstract": "We investigate whether AGN jets can produce ultra-heavy dark matter (UHDM) as a Dirac fermion X via the effective contact interaction L_int = (1/Lambda^2)(qbar q)(Xbar X), through the process q qbar -> X Xbar, with corrected partonic cross section sigma_hat = s_hat*beta^3/(48*pi*Lambda^4), beta = sqrt(1 - 4*m_X^2/s_hat). Using GRMHD simulations for jet particle acceleration and this effective-field-theory production channel, we characterize the (log10 Lambda, log10 m_X) parameter space deterministically, using a fixed benchmark collision energy sqrt(s_hat) = 3.16e8 GeV, over the prior Lambda in [1e8, 1e11] GeV, m_X in [1e6, 1e10] GeV. The theoretically accepted region (EFT-valid and above the pair-production threshold) is 3.16e8 < Lambda <= 1e11 GeV, 1e6 <= m_X < 1.58e8 GeV. Within this region, and under the current pipeline's hardcoded Fermi-LAT, IceCube, and Pierre Auger limits, no point produces a nonzero observational penalty -- i.e. the current implementation finds no data-driven constraint on (Lambda, m_X) over the explored, theoretically valid parameter space. This is a statement about the current pipeline as implemented, not an independently verified claim about present-day experimental sensitivity. The reported inference is deterministic (a 221-point grid plus the closed-form region boundaries above); it does not use an MCMC posterior. The current quark-antiquark PDF/luminosity treatment is an exploratory parametric stand-in, not CT18 NNLO, and has not been benchmarked or validated against a real PDF set; a validated LHAPDF/CT18 NNLO implementation is deferred to future (Track B) work.",
+  "keywords": [
+    "dark matter",
+    "galaxies: active",
+    "galaxies: jets",
+    "particle physics",
+    "astroparticle physics",
+    "effective field theory",
+    "multi-messenger astronomy",
+    "GRMHD simulations",
+    "gamma-ray astronomy",
+    "neutrino astronomy",
+    "cosmic rays",
+    "Bayesian inference",
+    "MCMC"
+  ],
+  "publication": {
+    "status": "preprint",
+    "submission_date": "2025-11-03"
+  },
+  "preprint": {
+    "arxiv_category": "astro-ph.HE",
+    "github_url": "https://github.com/kirtii56/Agnn"
+  },
+  "data_repository": {
+    "github_url": "https://github.com/kirtii56/Agnn",
+    "license": "MIT"
+  },
+  "computational_requirements": {
+    "python_version": "3.9",
+    "key_packages": [
+      "numpy>=1.21.0",
+      "scipy>=1.7.0",
+      "matplotlib>=3.4.0",
+      "emcee>=3.1.0",
+      "corner>=2.2.0",
+      "h5py>=3.3.0",
+      "astropy>=4.3.0"
+    ],
+    "optional_packages": [
+      "lhapdf"
+    ],
+    "runtime_estimate": "not established for a single consolidated run; the reported deterministic (log10 Lambda, log10 m_X) inference and individual figure-generating scripts each run in well under a minute (see REPRODUCING.md); the legacy MCMC module's runtime depends on its --nwalkers/--nsteps configuration and is not used for the reported result",
+    "memory_requirements": "not established for the reported deterministic inference; 8 GB RAM was the sizing used for the legacy MCMC module, not required for the reported result",
+    "cpu_cores": "not established for the reported deterministic inference; 16 was the sizing used for the legacy MCMC module, not required for the reported result",
+    "random_seeds": "not applicable to the reported deterministic inference (no stochastic sampling is used); [42, 137, 271, 314, 628] are seeds documented in the legacy MCMC module (monte_carlo_sampling.py), not used to produce the reported result"
+  },
+  "figures": [
+    {
+      "number": 1,
+      "file": "figures/fig1_eft_validity_corrected.pdf",
+      "caption": "EFT validity regions showing cutoff scale vs UHDM mass (corrected)",
+      "generated_by": "code/eft_cross_sections.py"
+    },
+    {
+      "number": 2,
+      "file": "figures/fig2_gamma_max.pdf",
+      "caption": "Maximum Lorentz factors from GRMHD simulations",
+      "generated_by": "code/grmhd_acceleration.py"
+    },
+    {
+      "number": 3,
+      "file": "figures/fig3_production_rate.pdf",
+      "caption": "UHDM production rates vs mass (PDF-corrected)",
+      "generated_by": "code/eft_cross_sections.py"
+    },
+    {
+      "number": 4,
+      "file": "figures/fig4_constraints.pdf",
+      "caption": "Multi-messenger constraints summary",
+      "generated_by": "code/observational_constraints.py"
+    },
+    {
+      "number": "S1",
+      "file": "figures/figS1_mcmc_diagnostics.pdf",
+      "caption": "LEGACY -- MCMC diagnostics from the legacy monte_carlo_sampling.py module; not part of the reported deterministic inference",
+      "generated_by": "code/monte_carlo_sampling.py (legacy, not used for the reported result)"
+    }
+  ],
+  "data_files": [
+    {
+      "name": "fermi_lat_3fhl_catalog.fits",
+      "description": "Fermi-LAT Third Catalog of Hard Sources (3FHL)",
+      "source": "https://fermi.gsfc.nasa.gov/ssc/data/access/lat/3FHL/",
+      "size_mb": 50,
+      "citation": "Ajello et al. 2017, ApJS 232, 18"
+    },
+    {
+      "name": "icecube_neutrino_limits.csv",
+      "description": "IceCube neutrino stacking analysis limits (1,163 AGN)",
+      "source": "IceCube Collaboration public data",
+      "size_mb": 0.1,
+      "citation": "IceCube Collaboration 2023, ApJ 954, 75"
+    },
+    {
+      "name": "auger_uhecr_spectrum.dat",
+      "description": "Pierre Auger UHECR spectrum and composition data",
+      "source": "https://www.auger.org/",
+      "size_mb": 0.01,
+      "citation": "Pierre Auger Collaboration 2020, PRL 125, 121106"
+    },
+    {
+      "name": "mc_posterior_samples.h5",
+      "description": "LEGACY -- would be produced only by running the legacy monte_carlo_sampling.py MCMC module; not part of the reported deterministic inference and not currently present in the repository",
+      "generated": false,
+      "size_mb": null
+    }
+  ],
+  "version": "2.0-FINAL",
+  "last_updated": "2025-11-03",
+  "package_status": "preprint_ready",
+  "revisions": {
+    "v1.0": "Initial submission",
+    "v2.0-FINAL": "Publication-ready version with all corrections applied (Issues 2.1-2.7)"
+  }
+}

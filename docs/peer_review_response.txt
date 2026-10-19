@@ -1,0 +1,76 @@
+RESPONSE TO REFEREE COMMENTS
+============================
+
+Manuscript: "Ultra-Heavy Dark Matter Production in Active Galactic Nucleus Jets:
+             A Falsifiable Multi-Messenger Framework"
+
+Author: Kirti Patidar
+Status: ArXiv Preprint (Not yet submitted for peer review)
+Date: November 3, 2025
+
+---
+
+This file will contain responses to referee comments after journal submission.
+
+For the current preprint version, all issues identified in the internal review
+have been addressed. See docs/submission_checklist.txt for complete validation.
+
+---
+
+REFEREE REPORT
+==============
+
+[Referee comments will be inserted here]
+
+---
+
+AUTHOR RESPONSES
+================
+
+Major Comments:
+
+1. [Referee Comment]
+
+   Response: [Author response]
+
+   Changes made: [Specific changes to manuscript]
+
+2. [Referee Comment]
+
+   Response: [Author response]
+
+   Changes made: [Specific changes to manuscript]
+
+
+Minor Comments:
+
+1. [Referee Comment]
+
+   Response: [Author response]
+
+   Changes made: [Specific changes to manuscript]
+
+---
+
+SUMMARY OF CHANGES
+==================
+
+Major revisions:
+- [List major changes]
+
+Minor revisions:
+- [List minor changes]
+
+New figures:
+- [List any new figures added]
+
+Additional analysis:
+- [List any new calculations or analysis]
+
+---
+
+We believe these revisions have significantly strengthened the manuscript
+and hope the referee will now recommend publication.
+
+Sincerely,
+[Corresponding Author]

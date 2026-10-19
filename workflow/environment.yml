@@ -1,0 +1,64 @@
+# Conda environment for UHDM AGN analysis
+# Create with: conda env create -f environment.yml
+# Activate with: conda activate uhdm-agn
+
+name: uhdm-agn
+
+channels:
+  - conda-forge
+  - defaults
+
+dependencies:
+  # Python version
+  - python=3.9
+
+  # Core scientific computing
+  - numpy>=1.21.0
+  - scipy>=1.7.0
+  - matplotlib>=3.4.0
+
+  # MCMC and statistics
+  - emcee>=3.1.0
+  - corner>=2.2.0
+  - arviz>=0.11.0
+
+  # Data handling
+  - h5py>=3.3.0
+  - pandas>=1.3.0
+  - astropy>=4.3.0
+
+  # Parallel processing
+  - multiprocess>=0.70.0
+
+  # Development tools
+  - jupyter>=1.0.0
+  - ipython>=7.26.0
+  - pytest>=6.2.0
+  - pytest-cov>=2.12.0
+
+  # Optional plotting
+  - seaborn>=0.11.0
+
+  # LaTeX (optional - for manuscript)
+  - texlive-core  # Linux/Mac only
+
+  # Pip packages (not available in conda)
+  - pip
+  - pip:
+    - lhapdf  # May require external LHAPDF library installation
+
+# Post-installation instructions:
+#
+# For LHAPDF support (parton distribution functions):
+#   1. Install LHAPDF C++ library:
+#      wget https://lhapdf.hepforge.org/downloads/?f=LHAPDF-6.5.3.tar.gz
+#      tar xf LHAPDF-6.5.3.tar.gz && cd LHAPDF-6.5.3
+#      ./configure --prefix=$HOME/local
+#      make && make install
+#
+#   2. Download CT18 NNLO PDF set:
+#      lhapdf install CT18NNLO
+#
+# For full LaTeX support:
+#   apt-get install texlive-full  # Ubuntu/Debian
+#   brew install --cask mactex    # macOS
