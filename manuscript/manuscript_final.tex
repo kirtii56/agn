@@ -30,9 +30,9 @@ A deterministic, grid-verified analysis of the $(\Lambda, m_X)$ parameter space 
 
 The nature of dark matter remains unresolved. While weakly interacting massive particles (WIMPs) in the GeV--TeV range have dominated searches \citep{Jungman1996,Bertone2005}, null results from direct detection \citep{LZ2024} and collider experiments \citep{ATLAS2023} motivate exploring alternative candidates across extended mass ranges.
 
-Ultra-heavy dark matter (UHDM) with $m_X \gtrsim 10^{15}$ eV represents such a frontier \citep{Chung1998a,Kolb2017}. Standard production mechanisms involve gravitational particle creation during inflation \citep{Chung1998a} or thermal freeze-in at Planck-scale temperatures. Observational constraints from Pierre Auger photon limits yield $\tau_X > {\rm few} \times 10^{21}$ years for hadronically-decaying SHDM at $10^{15} < M_X < 10^{18}$ GeV \citep{Auger2019PRD}.
+Ultra-heavy dark matter (UHDM) with $m_X \gtrsim 10^{15}$ eV represents such a frontier \citep{Chung1998a,Kolb2017}. Standard production mechanisms involve gravitational particle creation during inflation \citep{Chung1998a} or thermal freeze-in at Planck-scale temperatures. Searches for ultra-high-energy photons in cosmic-ray data place strong lower limits on the lifetime of decaying super-heavy dark matter \citep{Alcantara2019}.
 
-\subsection{Novel Hypothesis: AGN Jets as Production Sites}
+\subsection{AGN Jets as Production Sites}
 
 We investigate whether AGN jets---among the Universe's most energetic phenomena---can produce UHDM via Standard Model particle collisions. This hypothesis is motivated by:
 
@@ -46,7 +46,7 @@ We investigate whether AGN jets---among the Universe's most energetic phenomena-
 \item AGN-origin UHDM would exhibit distinct spatial clustering (around massive galaxies) and kinematic signatures (higher velocity dispersion) compared to primordial populations.
 \end{enumerate}
 
-Extensive literature searches found no established work on AGN jets as \emph{primary production sites} for UHDM, distinguishing this from studies of UHDM \emph{detection/scattering} in jets \citep{Gorchtein2010,Wang2024}.
+We are not aware of prior work that treats AGN jets as \emph{primary production sites} for UHDM; existing studies of dark matter in AGN jets address \emph{scattering} of ambient dark matter instead \citep{Gorchtein2010}.
 
 This work establishes a falsifiable methodology for calculating and constraining astrophysical UHDM production. Given factor-of-$10^3$ systematic uncertainties, we emphasize improvability over precision.
 
@@ -198,7 +198,7 @@ Figure~\ref{fig:production_rate} shows this partonic cross section as a function
 
 \subsection{Spatially-Integrated Production Rates}
 
-\textbf{Critical improvement (Issue 2.1):} We replace the single-zone approximation with spatial integration accounting for radial stratification:
+Rather than a single-zone approximation, we integrate over the jet's radial stratification:
 
 \begin{equation}
 \dot{N}_X = \int_{r_{\rm min}}^{r_{\rm max}} \int_0^{2\pi} \int_0^{\theta_{\rm jet}} n_1(r) n_2(r) \sigma(r) v r^2 \sin\theta \, dr\, d\theta\, d\phi

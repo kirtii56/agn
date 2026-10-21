@@ -7,7 +7,7 @@
 **Affiliation:** Independent Researcher
 **Contact:** kirtiptdr174@gmail.com
 **Version:** 2.0-FINAL
-**Last Updated:** 2026-10-19
+**Last Updated:** 2026-10-21
 
 ---
 
@@ -33,7 +33,7 @@ UHDM_AGN_Paper_Final/
 │   ├── fig2_gamma_max.pdf                 # Max Lorentz factors
 │   ├── fig3_production_rate.pdf           # Production rates vs mass
 │   ├── fig4_constraints.pdf               # Multi-messenger constraints
-│   └── figS1_mcmc_diagnostics.pdf         # Convergence diagnostics
+│   └── figS1_mcmc_diagnostics.pdf         # Legacy MCMC diagnostics (not in manuscript)
 ├── code/
 │   ├── grmhd_acceleration.py         # Lorentz factor calculations
 │   ├── eft_cross_sections.py         # EFT production cross sections
@@ -95,8 +95,8 @@ python code/grmhd_acceleration.py
 # EFT cross sections
 python code/eft_cross_sections.py
 
-# Monte Carlo scan (~1 min for default 10^3 samples)
-python code/monte_carlo_sampling.py --seed 42
+# Deterministic grid reproduction (the reported result)
+python code/deterministic_grid_reproduction.py
 
 # Observational constraints
 python code/observational_constraints.py
@@ -107,8 +107,8 @@ python code/observational_constraints.py
 For complete step-by-step reproduction of all results:
 
 ```bash
-# Run Monte Carlo analysis (~1 min default; use --nsteps 10000 for production)
-python code/monte_carlo_sampling.py --seed 42
+# Reproduce the deterministic (Lambda, m_X) grid result
+python code/deterministic_grid_reproduction.py
 
 # Generate all figures
 python code/generate_figures.py --output figures/
@@ -141,7 +141,7 @@ python code/grmhd_acceleration.py        && echo "GRMHD: OK"
 python code/eft_cross_sections.py        && echo "EFT: OK"
 python code/pdf_integration.py           && echo "PDF: OK"
 python code/observational_constraints.py && echo "Constraints: OK"
-python code/monte_carlo_sampling.py --seed 42 && echo "MCMC: OK"
+python code/deterministic_grid_reproduction.py && echo "Grid: OK"
 ```
 
 Figures verified present after a full run:
@@ -152,7 +152,6 @@ Figures verified present after a full run:
 | 2 | `fig2_gamma_max.pdf` | 25 KB |
 | 3 | `fig3_production_rate.pdf` | 22 KB |
 | 4 | `fig4_constraints.pdf` | 29 KB |
-| S1 | `figS1_mcmc_diagnostics.pdf` | 186 KB |
 
 The reported inference is deterministic (see manuscript Section on Deterministic Parameter-Space Inference); `monte_carlo_sampling.py` is a legacy/inactive implementation not used to produce the reported result.
 
@@ -201,7 +200,7 @@ All figures are generated programmatically from code:
 - **Figure 2**: Maximum Lorentz factors vs magnetization
 - **Figure 3**: Production rates vs UHDM mass
 - **Figure 4**: Multi-messenger constraints summary (illustrative/schematic curve only, not a calculated model prediction)
-- **Figure S1**: MCMC convergence diagnostics
+- **Figure S1**: legacy MCMC diagnostics (not used in the manuscript)
 
 Figures are saved in `figures/` as vector PDFs (300 dpi).
 
@@ -286,10 +285,10 @@ For detailed documentation, see:
 - [`docs/README.md`](docs/README.md) - Comprehensive technical documentation
 - [`docs/metadata.json`](docs/metadata.json) - Project metadata for arXiv
 - [`docs/submission_checklist.txt`](docs/submission_checklist.txt) - Pre-submission validation
-- [`manuscript/`](manuscript/) - LaTeX source and compiled PDF
+- [`manuscript/`](manuscript/) - LaTeX source and bibliography
 
 ---
 
 **Status**: In preparation for arXiv submission
-**Version**: 2.1
-**Last Updated**: February 2026
+**Version**: 2.0-FINAL
+**Last Updated**: 2026-10-21
